@@ -32,4 +32,12 @@ public class InvoiceServiceTest {
         double fare = invoiceGenerator.calculateFare(rides);
         Assert.assertEquals(30, fare, 0.0);
     }
+
+    @Test
+    public void thisTestWillBePassedWhenIdPassedAndReturnSummaryEquals() {
+        InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
+        InvoiceSummary summary = invoiceGenerator.calculateTotalFareFromRepository(3300);
+        InvoiceSummary expectedSummary = new InvoiceSummary(3, 303.0);
+        Assert.assertEquals(expectedSummary, summary);
+    }
 }
