@@ -40,4 +40,12 @@ public class InvoiceServiceTest {
         InvoiceSummary expectedSummary = new InvoiceSummary(3, 303.0);
         Assert.assertEquals(expectedSummary, summary);
     }
+
+    @Test
+    public void thisTestWillBePassedWhenIdAndTypePassedAndReturnSummaryEquals() {
+        InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
+        InvoiceSummary summary = invoiceGenerator.calculateTotalFareFromRepositoryAndType(3300, "Premium");
+        InvoiceSummary expectedSummary = new InvoiceSummary(3, 466.0);
+        Assert.assertEquals(expectedSummary, summary);
+    }
 }

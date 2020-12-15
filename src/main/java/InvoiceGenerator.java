@@ -6,6 +6,22 @@ public class InvoiceGenerator {
     private static final int COST_PER_TIME = 1;
     private double MINIMUM_FARE = 5;
 
+	Ride firstRider1 = new Ride(15.0, 5);
+	Ride firstRider2 = new Ride(0.1, 1);
+	Ride firstRider3 = new Ride(8.0, 3);
+	Ride secondRider1 = new Ride(3.0, 8);
+	Ride secondRider2 = new Ride(7.0, 2);
+	Ride secondRider3 = new Ride(8.0, 5);
+	Ride thirdRider1 = new Ride(5.0, 9);
+	Ride thirdRider2 = new Ride(8.0, 10);
+	Ride thirdRider3 = new Ride(15.0, 4);
+
+	ArrayList<Ride> firstRider = new ArrayList<Ride>();
+	ArrayList<Ride> secondRider = new ArrayList<Ride>();
+	ArrayList<Ride> thirdRider = new ArrayList<Ride>();
+	HashMap<Integer, ArrayList<Ride>> repository = new HashMap<Integer, ArrayList<Ride>>();
+
+
     public double calculateFare(double distance, int time) {
         double totalFare = distance * MINIMUM_COST_PER_KILOMETER + time * COST_PER_TIME;
         return Math.max(totalFare, MINIMUM_FARE);
